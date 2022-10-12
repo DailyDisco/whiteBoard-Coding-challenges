@@ -22,3 +22,33 @@ class Solution {
         return String(a + b)
     }
 }
+
+// Minimum Bracket Addition
+
+// P - parameters string of brackets
+// R - returns integer 
+// E - example 
+// P - pseudocode
+
+// input: '))(('
+// output: 4
+
+class Solution {
+    solve(str) {
+        let counter = 0;
+        let answer = 0;
+
+        for (let char of str) {
+            if( char == '(' ) {
+                counter++
+            } else if ( char == ')' ) {
+                if (counter == 0) {
+                    answer++
+                } else {
+                    counter--
+                }
+            }
+        }
+        return counter + answer
+    }
+}
